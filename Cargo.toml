@@ -1,7 +1,12 @@
 [package]
-name = "cpe_2-3-rs"
+name = "seiber"
 version = "0.0.1"
 edition = "2021"
+description = "A library implementing multiple cybersecurity tools in rust"
+readme = "README.md"
+repository = "https://github.com/rokkit-lab/seiber"
+license = "MIT"
+keywords = ["security", "cybersecurity", "vulnerability"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
