@@ -22,9 +22,12 @@ A library implementing multiple cybersecurity tools in rust.
 
 ### Project Goals
 This project aims to:
- - Use idiomatic rust
- - Use only safe rust
- - Have minimal dependencies 
+ - Use idiomatic rust.
+ - Use only safe rust.
+ - Have minimal dependencies.
+ - Be able to claim compliance with the CPE standards. 
  
-## Disclaimer
+## Disclaimers & Trademarks
 This library uses data from the [National Vulnerability Database (NVD)](https://nvd.nist.gov/) API but is not endorsed or certified by the NVD.
+
+CPE is a trademark of The MITRE Corporation.

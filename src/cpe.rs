@@ -2,4 +2,5 @@
 //! to seiber.
 
 
-mod wfn;
+pub mod wfn;
+pub mod error;
