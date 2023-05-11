@@ -18,6 +18,8 @@ A library implementing multiple cybersecurity tools in rust.
  - [ ] [Security Content Automation Protocol (SCAP)](https://csrc.nist.gov/Projects/Security-Content-Automation-Protocol/)
  - [ ] Software Identification (SWID) Tag [ISO/IEC 19770-2:2015]
  - [ ] [Concise SWID (CoSWID) Tag](https://datatracker.ietf.org/doc/draft-ietf-sacm-coswid/24/)
+ - [ ] [Common Attack Pattern Enumeration and Classification (CAPEC™)](https://capec.mitre.org/)
+ - [ ] [MITRE ATT&CK® Version 13](https://attack.mitre.org/)
 
 
 ### Project Goals
@@ -30,4 +32,4 @@ This project aims to:
 ## Disclaimers & Trademarks
 This library uses data from the [National Vulnerability Database (NVD)](https://nvd.nist.gov/) API but is not endorsed or certified by the NVD.
 
-CPE is a trademark of The MITRE Corporation.
+CPE, CAPEC & ATT&CK are trademarks of The MITRE Corporation, with which seiber has no affiliation.
