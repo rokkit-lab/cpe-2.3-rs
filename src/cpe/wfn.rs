@@ -46,6 +46,14 @@ impl Wfn {
                 self.part = AttributeValue::Value(Part::H);
                 Ok(())
             },
+            "ANY" | "any" => {
+                self.part = AttributeValue::Any;
+                Ok(())
+            }
+            "NA" | "na" => {
+                self.part = AttributeValue::Na;
+                Ok(())
+            }
             _ => Err(CpeError::InvalidValueError)
         }
     }
@@ -56,8 +64,8 @@ impl Wfn {
         // This match code is likely to be the same for most attributes. Can probably move this to a standalone function.
         match self.part {
             AttributeValue::Unspecified => None,
-            AttributeValue::ANY => Some(String::from("ANY")),
-            AttributeValue::NA => Some(String::from("NA")),
+            AttributeValue::Any => Some(String::from("ANY")),
+            AttributeValue::Na => Some(String::from("NA")),
             AttributeValue::Value(x) => Some(x.to_string()),
         }
     } 
@@ -83,10 +91,10 @@ enum AttributeValue<T> {
     Unspecified,
     /// The logical value of ANY or 'any value'. An attribute should be assined the value of ANY when
     /// there are no restrictions on acceptable values for the attribute [CPE23-N].  
-    ANY,
+    Any,
     /// The logical value of NA or 'not applicable/not used'. An attribute should be assigned the value of NA
     /// when there is no legal or meaningful values for the attribute.
-    NA,
+    Na,
     /// Holds the value of an attribute when an attribute has been assigned a value.
     Value(T),
 }
@@ -117,102 +125,4 @@ impl fmt::Display for Part {
 }
 
 #[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn create_empty_wfn() {
-        let new_wfn = Wfn::new();
-        let empty_wfn = Wfn {
-            part: AttributeValue::Unspecified,
-        };
-        assert_eq!(new_wfn, empty_wfn);
-    }
-
-    #[test]
-    fn display_empty_wfn() {
-        let new_wfn = Wfn::new();
-        let empty_wfn_string = String::from("wfn: []");
-        assert_eq!(new_wfn.to_string(), empty_wfn_string);
-    }
-
-    #[test]
-    fn set_part_attribute_application_lower_case(){
-        let mut new_wfn = Wfn::new();
-        let _ = new_wfn.set_part("a");
-        if let AttributeValue::Value(p) = new_wfn.part {
-            assert_eq!(p, Part::A);
-        }
-        else {
-            panic!("Part attribute not assigned a value");
-        }   
-    }
-
-    #[test]
-    fn set_part_attribute_application_upper_case(){
-        let mut new_wfn = Wfn::new();
-        let _ = new_wfn.set_part("A");
-        if let AttributeValue::Value(p) = new_wfn.part {
-            assert_eq!(p, Part::A);
-        }
-        else {
-            panic!("Part attribute not assigned a value");
-        }   
-    }
-
-    #[test]
-    fn set_part_attribute_os_lower_case(){
-        let mut new_wfn = Wfn::new();
-        let _ = new_wfn.set_part("o");
-        if let AttributeValue::Value(p) = new_wfn.part {
-            assert_eq!(p, Part::O);
-        }
-        else {
-            panic!("Part attribute not assigned a value");
-        }   
-    }
-
-    #[test]
-    fn set_part_attribute_os_upper_case(){
-        let mut new_wfn = Wfn::new();
-        let _ = new_wfn.set_part("O");
-        if let AttributeValue::Value(p) = new_wfn.part {
-            assert_eq!(p, Part::O);
-        }
-        else {
-            panic!("Part attribute not assigned a value");
-        }   
-    }
-
-    #[test]
-    fn set_part_attribute_hardware_lower_case(){
-        let mut new_wfn = Wfn::new();
-        let _ = new_wfn.set_part("h");
-        if let AttributeValue::Value(p) = new_wfn.part {
-            assert_eq!(p, Part::H);
-        }
-        else {
-            panic!("Part attribute not assigned a value");
-        }   
-    }
-
-    #[test]
-    fn set_part_attribute_hardware_upper_case(){
-        let mut new_wfn = Wfn::new();
-        let _ = new_wfn.set_part("H");
-        if let AttributeValue::Value(p) = new_wfn.part {
-            assert_eq!(p, Part::H);
-        }
-        else {
-            panic!("Part attribute not assigned a value");
-        }   
-    }
-
-    #[test]
-    fn set_part_attribute_any_lower_case(){
-        let mut new_wfn = Wfn::new();
-        let _ = new_wfn.set_part("any");
-        assert_eq!(new_wfn.part, AttributeValue::ANY);
-    }
-}
-
+mod tests;

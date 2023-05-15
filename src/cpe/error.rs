@@ -2,7 +2,7 @@
 
 use std::fmt;
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 /// An enumeration containing all CPE errors.
 pub enum CpeError {
     /// The requested action contained an invalid value. 
