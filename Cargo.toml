@@ -1,5 +1,5 @@
 [package]
-name = "seiber"
+name = "seiber-suit-rs"
 version = "0.0.1"
 edition = "2021"
 description = "A library implementing multiple cybersecurity tools in rust"

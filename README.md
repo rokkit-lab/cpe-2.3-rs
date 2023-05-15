@@ -1,4 +1,4 @@
-# seiber
+# seiber-suit-rs
 A library implementing multiple cybersecurity tools in rust.
 
 ### Tools to be implemented:

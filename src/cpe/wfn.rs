@@ -1,4 +1,4 @@
-//! A submodule providing Well Formed CPE Names (WFN) for the seiber CPE module.
+//! A submodule providing Well Formed CPE Names (WFN) for the seiber-suit-rs CPE module.
 //! 
 //! Well Formed CPE Names (WFN) are defined by NIST Interagency Report 7695 *Common Platform Enumeration:
 //! Naming Specification Version 2.3*. This standard is refered to as [CPE23-N] throughout documentation.
@@ -9,9 +9,9 @@
 //! 
 //! Although the CPE Specification states that WFN are only a *'logical construct'* and does not require 
 //! that CPE-conformant tools manipulate WFN-like data structures internally, WFN data structures are used
-//! in seiber as the primary CPE data structure.
+//! in seiber-suit-rs as the primary CPE data structure.
 //! 
-//! The seiber implimentation of WFN should only differ from the specification in \[CPE23-N] where absolutely
+//! The seiber-suit-rs implimentation of WFN should only differ from the specification in \[CPE23-N] where absolutely
 //! necessary to maintain idiomatic rust as far is practicable.
 
 use super::error::CpeError;
