@@ -1,4 +1,5 @@
 # seiber-suit-rs
+[![CI](https://github.com/rokkit-lab/seiber-suite-rs/actions/workflows/ci.yml/badge.svg)](https://github.com/rokkit-lab/seiber-suite-rs/actions/workflows/ci.yml)
 A library implementing multiple cybersecurity tools in rust.
 
 ### Tools to be implemented:
